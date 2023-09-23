@@ -1,0 +1,3 @@
+# 项目排除路径
+/classes/
+/WebContent/WEB-INF/classes/
