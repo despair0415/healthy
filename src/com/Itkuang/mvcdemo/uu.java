@@ -23,6 +23,7 @@ public static void main(String[] args) {
 	}
 	System.out.println(b);
 	System.out.println(list.size());
-	System.out.println(list.get(0).getMoid());
+	System.out.println(list.get(0).getMtime());
+
 }
 }

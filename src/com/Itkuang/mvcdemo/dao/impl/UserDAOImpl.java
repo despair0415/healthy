@@ -132,7 +132,7 @@ public class UserDAOImpl implements IUserDAO {
 	public List<monitor> findMonitorById(int uid) throws Exception {
 		// TODO Auto-generated method stub
 		List<monitor> list=new ArrayList<monitor>();
-		String sql = "SELECT moid,rate,high,low,oxygen,uid,mtime FROM data WHERE uid=?" ;
+		String sql = "SELECT moid,rate,high,low,oxygen,uid,mtime FROM monitor WHERE uid=?" ;
 		this.pstmt = this.conn.prepareStatement(sql) ;
 		this.pstmt.setInt(1, uid);
 		ResultSet rs = this.pstmt.executeQuery() ;
@@ -144,7 +144,7 @@ public class UserDAOImpl implements IUserDAO {
 			monitor1.setLow(rs.getFloat(4));
 			monitor1.setOxygen(rs.getString(5));
 			monitor1.setUid(rs.getInt(6));
-			monitor1.setMtime(rs.getTimestamp(7));
+			monitor1.setMtime(rs.getTimestamp(7));//此处还是有问题
 			list.add(monitor1);
 		}
 		this.pstmt.close() ;

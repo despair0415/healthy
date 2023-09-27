@@ -9,11 +9,11 @@ public class monitor {
     private float low;
     private String oxygen;
     private int uid;
-    private Timestamp mtime;
+    private java.sql.Timestamp mtime;
     public monitor() {
 
     }
-    public monitor(int moid, int rate, float high, float low, String oxygen, int uid, Timestamp mtime) {
+    public monitor(int moid, int rate, float high, float low, String oxygen, int uid, java.sql.Timestamp mtime) {
         this.moid = moid;
         this.rate = rate;
         this.high = high;
@@ -75,9 +75,6 @@ public class monitor {
         return mtime;
     }
 
-    public void setMtime(Timestamp mtime) {
-        this.mtime = mtime;
-    }
 
 
     public void setMtime(java.sql.Timestamp timestamp) {
