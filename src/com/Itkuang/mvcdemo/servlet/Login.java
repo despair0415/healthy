@@ -16,15 +16,15 @@ public class Login extends HttpServlet {
 	public void doGet(HttpServletRequest req,HttpServletResponse resp) throws ServletException,IOException{
 		resp.setCharacterEncoding("UTF-8");
 		req.setCharacterEncoding("UTF-8");
-		String userid = req.getParameter("userid") ;
-		String userpass = req.getParameter("userpass") ;
+		String phone = req.getParameter("phone") ;
+		String password = req.getParameter("password") ;
 		PrintWriter out=resp.getWriter();     //初始化out对象
 		User user = new User() ;//实例化user对象
-		user.setUserid(userid) ;
-		user.setPassword(userpass) ;
+		user.setPhone(phone) ;
+		user.setPassword(password); ;
 		try{
 			if(DAOFactory.getIUserDAOInstance().findLogin(user)){
-				user=DAOFactory.getIUserDAOInstance().findById(userid);
+				user=DAOFactory.getIUserDAOInstance().findByPhone(phone);
 //				req.setAttribute("user",user) ;
 				HttpSession sess = req.getSession();
 				sess.setAttribute("user", user);
