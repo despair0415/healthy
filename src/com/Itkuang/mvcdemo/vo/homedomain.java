@@ -1,12 +1,12 @@
 package com.Itkuang.mvcdemo.vo;
 
-public class homedpmasin {
+public class homedomain {
     private int domainid;
     private String domainname;
     private int createuid;
     private String createtime;
 
-    public homedpmasin(int domainid, String domainname, int createuid, String createtime) {
+    public homedomain(int domainid, String domainname, int createuid, String createtime) {
         this.domainid = domainid;
         this.domainname = domainname;
         this.createuid = createuid;
