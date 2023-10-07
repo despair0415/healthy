@@ -15,6 +15,10 @@ public class Comment {
         this.commenttime = commenttime;
     }
 
+    public Comment() {
+
+    }
+
     public int getCommentid() {
         return commentid;
     }
