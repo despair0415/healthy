@@ -1,10 +1,175 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>"优"品汇</title>
+    <meta charset="UTF-8">
+    <title>健康平台</title>
+    <link rel="stylesheet" type="text/css" href="shop.css">
+    <script src="shop.js"></script>
 </head>
 <body>
-<a href="https://list.jd.com/list.html?cat=9192,9197,12587"><img style="width: 100%;height: 100%;" src="shop.png"></a>
+<div class="wrapper">
+    <div class="left-sidebar sidebar">
+        <h3>保健器械分类</h3>
+        <ul>
+            <li id="health-monitor"><span>+</span> 健康监测</li>
+            <div class="category" id="health-monitor-category">
+                <ul>
+                    <li>上臂血压计</li>
+                    <li>腕式血压计</li>
+                    <li>血糖仪</li>
+                    <li>体温计</li>
+                    <li>心电监测</li>
+                </ul>
+            </div>
+            <li id="respiratory-oxygenation"><span>+</span> 呼吸制氧</li>
+            <div class="category" id="respiratory-oxygenation-category">
+                <ul>
+                    <li>制氧机</li>
+                    <li>呼吸机</li>
+                    <li>雾化器洗鼻器</li>
+                    <li>血氧仪</li>
+                </ul>
+            </div>
+            <li id="healthcare-therapy"><span>+</span> 养生理疗</li>
+            <div class="category" id="healthcare-therapy-category">
+                <ul>
+                    <li>中频治疗仪</li>
+                    <li>电烤灯</li>
+                    <li>紫外线光疗仪</li>
+                    <li>艾灸</li>
+                    <li>拔罐</li>
+                    <li>刮痧板</li>
+                </ul>
+            </div>
+            <li id="rehabilitation-assistance"><span>+</span> 康复辅助</li>
+            <div class="category" id="rehabilitation-assistance-category">
+                <ul>
+                    <li>手动轮椅</li>
+                    <li>电动轮椅</li>
+                    <li>拐杖</li>
+                    <li>护理床</li>
+                    <li>爬楼机</li>
+                    <li>助听器</li>
+                </ul>
+            </div>
+            <li id="top-selling"><span>+</span> 大家都在买</li>
+            <div class="category" id="top-selling-category">
+                <ul>
+                    <li>欧姆龙血压计</li>
+                    <li>强生血糖仪</li>
+                    <li>健康体检</li>
+                    <li>鱼跃制氧机</li>
+                    <li>飞利浦呼吸机</li>
+                    <li>眼部保健</li>
+                </ul>
+            </div>
+        </ul>
+    </div>
+
+    <!-- 添加的健康专区 -->
+    <div style="background-color: #fff; padding: 10px;">
+        <h3>健康专区</h3>
+        <ul style="display: flex; list-style: none; margin: 0; padding: 0;">
+            <li style="margin-right: 20px;"><a href="#">大药房</a></li>
+            <li style="margin-right: 20px;"><a href="#">家用医疗</a></li>
+            <li style="margin-right: 20px;"><a href="#">两性情话</a></li>
+            <li style="margin-right: 20px;"><a href="#">保健品</a></li>
+            <li style="margin-right: 20px;"><a href="#">滋补品</a></li>
+            <li style="margin-right: 20px;"><a href="#">靓眼世界</a></li>
+            <li style="margin-right: 20px;"><a href="#">健康服务</a></li>
+            <li style="margin-right: 20px;"><a href="#">健康勋章</a></li>
+            <li style="margin-right: 20px;"><a href="#">老人用品</a></li>
+        </ul>
+    </div>
+
+    <!--滚动照片-->
+    <div class="main">
+
+        <div class="slideshow-container">
+            <img class="slideshow-image" src="shop.png" alt="图片1">
+            <img class="slideshow-image" src="shop112.png" alt="图片2">
+            <img class="slideshow-image" src="屏幕截图%202023-10-04%20211909.jpg" alt="图片3">
+            <img class="slideshow-image" src="shop112.png" alt="图片4">
+
+            <div class="dot-container">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+
+        <!--四个照片-->
+        <div class="small-image-container">
+            <div class="small-image" onclick="location.href='page1.html';" style="background-image: url('shop112.png');"></div>
+            <div class="small-image" onclick="location.href='page2.html';" style="background-image: url('shop.png');"></div>
+            <div class="small-image" onclick="location.href='page3.html';" style="background-image: url('shop.png');"></div>
+            <div class="small-image" onclick="location.href='page4.html';" style="background-image: url('屏幕截图 2023-10-04 211909.jpg');"></div>
+        </div>
+    </div>
+</div>
+<script>
+    var slideIndex = 1; //表示当前轮播图的索引
+    showSlides(slideIndex);
+
+    function plusSlides(n) {//表示要移动的轮播图数量，通过调用showSlides函数来更新当前轮播图的索引
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {//表示要显示的轮播图索引，通过调用showSlides函数来更新当前轮播图的索引
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {//表示当前轮播图的索引
+        var i;
+        var slides = document.getElementsByClassName("slideshow-image");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i =0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+    // 添加菜单点击事件
+    var menuItems = document.getElementsByClassName("sidebar")[0].getElementsByTagName("li");
+    for (var i = 0; i < menuItems.length; i++) {
+        menuItems[i].addEventListener("click", toggleCategory);
+    }
+
+    function toggleCategory() {//点击展开或隐藏子类菜单的函数
+        var category = this.nextElementSibling;
+        if (category.style.display === "block") {
+            category.style.display = "none";
+            this.firstElementChild.innerText = "+";
+        } else {
+            category.style.display = "block";
+            this.firstElementChild.innerText = "-";
+        }
+    }
+
+    // 添加鼠标移出子类菜单时保持显示的逻辑
+    var subCategories = document.getElementsByClassName("category");
+    for (var i = 0; i < subCategories.length; i++) {
+        subCategories[i].addEventListener("mouseleave", function () {
+            this.style.display = "none";
+            this.previousElementSibling.firstElementChild.innerText = "+";
+        });
+    }
+</script>
 </body>
 </html>
+
