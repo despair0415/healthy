@@ -1,7 +1,6 @@
 package com.Itkuang.mvcdemo.dao.impl;
 
 import com.Itkuang.mvcdemo.vo.Comment;
-import com.Itkuang.mvcdemo.vo.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -51,5 +50,21 @@ public class CommentDAOImpl {
         this.pstmt.close() ;
         return comment ;
     }
-
+//查找所有的评论
+    public Comment findAll() throws Exception {
+        Comment comment = null ;
+        String sql = "SELECT commentid,uid,cid,comment,commenttime FROM comment" ;
+        this.pstmt = this.conn.prepareStatement(sql) ;
+        ResultSet rs = this.pstmt.executeQuery() ;
+        if(rs.next()){
+            comment = new Comment();
+            comment.setCommentid(rs.getInt(1));
+            comment.setUid(rs.getInt(2));
+            comment.setCid(rs.getInt(3));
+            comment.setComment(rs.getString(4));
+            comment.setCommenttime(rs.getString(5));
+        }
+        this.pstmt.close() ;
+        return comment ;
+    }
 }
